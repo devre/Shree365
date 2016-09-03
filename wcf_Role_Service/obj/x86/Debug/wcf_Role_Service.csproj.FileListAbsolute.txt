@@ -1,0 +1,5 @@
+C:\Shree365\wcf_Role_Service\bin\x86\Debug\wcf_Role_Service.dll.config
+C:\Shree365\wcf_Role_Service\bin\x86\Debug\wcf_Role_Service.dll
+C:\Shree365\wcf_Role_Service\bin\x86\Debug\wcf_Role_Service.pdb
+C:\Shree365\wcf_Role_Service\obj\x86\Debug\wcf_Role_Service.dll
+C:\Shree365\wcf_Role_Service\obj\x86\Debug\wcf_Role_Service.pdb

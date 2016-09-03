@@ -1,0 +1,994 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2C2C43FB-38A9-4894-9CB5-5867A819430D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Shree365</RootNamespace>
+    <AssemblyName>Shree365</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <HintPath>packages\DotNetOpenAuth.Core.4.3.4.13329\lib\net45-full\DotNetOpenAuth.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.MSProject, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Visio, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.Entity.Design" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Extensions.Design" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.0.0\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.10.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\AddPhoneNumber.aspx" />
+    <Content Include="Account\Confirm.aspx" />
+    <Content Include="Account\Forgot.aspx" />
+    <Content Include="Account\Lockout.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Manage.aspx" />
+    <Content Include="Account\ManageLogins.aspx" />
+    <Content Include="Account\ManagePassword.aspx" />
+    <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Account\ResetPassword.aspx" />
+    <Content Include="Account\ResetPasswordConfirmation.aspx" />
+    <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
+    <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="BannerBar.ascx" />
+    <Content Include="BottomBar.ascx" />
+    <Content Include="Client.aspx" />
+    <Content Include="CloudComputing.aspx" />
+    <Content Include="Consultants.aspx" />
+    <Content Include="ContactUs.aspx" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Corporate_Overview.aspx" />
+    <Content Include="EngagementModels.aspx" />
+    <Content Include="FileUploads.aspx" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="HeaderImages.xml" />
+    <Content Include="Images\12k91.jpg" />
+    <Content Include="Images\1k22.jpg" />
+    <Content Include="Images\1k44.jpg" />
+    <Content Include="Images\1k45.jpg" />
+    <Content Include="Images\1k9.jpg" />
+    <Content Include="Images\2k3.jpg" />
+    <Content Include="Images\2k33.jpg" />
+    <Content Include="Images\2k34.jpg" />
+    <Content Include="Images\3k52.jpg" />
+    <Content Include="Images\3k53.jpg" />
+    <Content Include="Images\3k55.jpg" />
+    <Content Include="Images\5k63.jpg" />
+    <Content Include="Images\5k64.jpg" />
+    <Content Include="Images\6k73.jpg" />
+    <Content Include="Images\9k81.jpg" />
+    <Content Include="Images\AboutUs.jpg" />
+    <Content Include="Images\autoTrader_Logo.jpg" />
+    <Content Include="Images\banner1.jpg" />
+    <Content Include="Images\banner2.jpg" />
+    <Content Include="Images\banner3.jpg" />
+    <Content Include="Images\banner4.jpg" />
+    <Content Include="Images\banner5.jpg" />
+    <Content Include="Images\banner6.jpg" />
+    <Content Include="Images\banner7.jpg" />
+    <Content Include="Images\Bhavans_Logo.png" />
+    <Content Include="Images\careers.jpg" />
+    <Content Include="Images\clients.jpg" />
+    <Content Include="Images\consulting.jpg" />
+    <Content Include="Images\contactus.jpg" />
+    <Content Include="Images\corporate.jpg" />
+    <Content Include="Images\CUNA_Logo.jpg" />
+    <Content Include="Images\DotNetNuke_Logo.jpg" />
+    <Content Include="Images\facebook.jpg" />
+    <Content Include="Images\facebook.png" />
+    <Content Include="Images\flickr.png" />
+    <Content Include="Images\gmail.jpg" />
+    <Content Include="Images\GujaratUniversity.jpg" />
+    <Content Include="Images\HCL_America_Logo.png" />
+    <Content Include="Images\images1.jpg" />
+    <Content Include="Images\images11.jpg" />
+    <Content Include="Images\images111.jpg" />
+    <Content Include="Images\images11_thumb.jpg" />
+    <Content Include="Images\images1_thumb.jpg" />
+    <Content Include="Images\IMG_1535.JPG" />
+    <Content Include="Images\IMG_1536.JPG" />
+    <Content Include="Images\IMG_1537.JPG" />
+    <Content Include="Images\info1.jpg" />
+    <Content Include="Images\InfoSys_Logo.jpg" />
+    <Content Include="Images\InfoSys_Logo1.jpg" />
+    <Content Include="Images\InfoSys_Logo1_thumb.jpg" />
+    <Content Include="Images\InfoSys_Logo2.jpg" />
+    <Content Include="Images\InfoSys_Logo_thumb.jpg" />
+    <Content Include="Images\infrastructure_mgmt.jpg" />
+    <Content Include="Images\JNIT_Logo.png" />
+    <Content Include="Images\linkedin.jpg" />
+    <Content Include="Images\linkedin.png" />
+    <Content Include="Images\MACWIS_Logo.png" />
+    <Content Include="Images\mail-icon.jpg" />
+    <Content Include="Images\mail-icon.png" />
+    <Content Include="Images\MCAD_Logo.png" />
+    <Content Include="Images\microsoft_development.jpg" />
+    <Content Include="Images\micro_gold_partner_footer.gif" />
+    <Content Include="Images\Mission.jpg" />
+    <Content Include="Images\Mobile_Development.jpg" />
+    <Content Include="Images\Ohm.jpg" />
+    <Content Include="Images\Ohm1.ico" />
+    <Content Include="Images\Ohm3.jpg" />
+    <Content Include="Images\PayPros_Logo.jpg" />
+    <Content Include="Images\phone-icon.jpg" />
+    <Content Include="Images\phone-icon.png" />
+    <Content Include="Images\PMP_Card1.jpeg" />
+    <Content Include="Images\PMP_Card2.jpeg" />
+    <Content Include="Images\PMP_Logo.png" />
+    <Content Include="Images\reddit.png" />
+    <Content Include="Images\Register.jpg" />
+    <Content Include="Images\rss.png" />
+    <Content Include="Images\separator.jpg" />
+    <Content Include="Images\ServiceDeliveryModels.jpg" />
+    <Content Include="Images\Shrikant_Image.jpg" />
+    <Content Include="Images\software_development.jpg" />
+    <Content Include="Images\training.jpg" />
+    <Content Include="Images\twitter.jpg" />
+    <Content Include="Images\twitter.png" />
+    <Content Include="Images\virtual_cloud.jpg" />
+    <Content Include="Images\vision-mission.jpg" />
+    <Content Include="Images\why_company.jpg" />
+    <Content Include="Images\Wisconsin_Wheda_Logo.jpg" />
+    <Content Include="InfrastructureMgmt.aspx" />
+    <Content Include="ITConsulting.aspx" />
+    <Content Include="LeftBar.ascx">
+      <BrowseToURL>/LeftBar.ascx</BrowseToURL>
+    </Content>
+    <Content Include="LeftSide_BA.ascx" />
+    <Content Include="LeftSide_DBA.ascx" />
+    <Content Include="LeftSide_Development.ascx" />
+    <Content Include="LeftSide_QA.ascx" />
+    <Content Include="LeftSide_Production.ascx" />
+    <Content Include="Login_Shree.aspx" />
+    <Content Include="MicrosoftTech.aspx" />
+    <Content Include="MobileTech.aspx" />
+    <Content Include="Openings.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Account\Web.config" />
+    <Content Include="Images\InfoSys.Master" />
+    <Content Include="Images\Microsoft_MCAD.pdf" />
+    <Content Include="Images\System.Web.HttpInputStream" />
+    <None Include="Service References\RoleService\ShreeClients.disco" />
+    <None Include="Service References\RoleService\configuration91.svcinfo" />
+    <None Include="Service References\RoleService\configuration.svcinfo" />
+    <None Include="Service References\RoleService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="ShreeClients.svc" />
+    <Content Include="ShreeMenu.ascx" />
+    <Content Include="Shree_BA.aspx" />
+    <Content Include="Shree_DBA.aspx" />
+    <Content Include="Shree_Developer.aspx" />
+    <Content Include="Shree_Production.aspx" />
+    <Content Include="Shree_QA.aspx" />
+    <Content Include="UserRoleService_WPF.aspx" />
+    <Content Include="Why_Shree365.aspx" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="ProjectRegistration.aspx" />
+    <Content Include="RightBar.ascx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Shree.Master" />
+    <Content Include="LeftSide_Mgmt.ascx" />
+    <Content Include="Shree_Status.ascx" />
+    <Content Include="Shree_Mgmt.aspx" />
+    <Content Include="SoftwareDevelopment.aspx" />
+    <Content Include="StatusBar.ascx" />
+    <Content Include="TopBar.ascx" />
+    <Content Include="Trainings.aspx" />
+    <Content Include="UserRegistration.aspx" />
+    <Content Include="UserRoleClient.aspx" />
+    <Content Include="UserRoleRegistration.aspx" />
+    <Content Include="User_Project_Assignment.aspx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="VisionMission.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Bundle.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Shree.Mobile.Master" />
+    <Content Include="Views\web.config" />
+    <Content Include="Views\Shared\Shree_Layout.cshtml" />
+    <Content Include="Views\Shared\PartialBannerBar.cshtml" />
+    <Content Include="Views\Shared\PartialBottomBar.cshtml" />
+    <Content Include="Views\Shared\PartialLeftBar.cshtml" />
+    <Content Include="Views\Shared\PartialMenuBar.cshtml" />
+    <Content Include="Views\Shared\PartialRightBar.cshtml" />
+    <Content Include="Views\Shared\PartialStatusBar.cshtml" />
+    <Content Include="Views\Shared\PartialTopBar.cshtml" />
+    <Content Include="Views\Shared\PartialWelcome.cshtml" />
+    <Content Include="Views\Home\Clients.cshtml" />
+    <Content Include="Views\Home\CloudComputing.cshtml" />
+    <Content Include="Views\Home\Consultants.cshtml" />
+    <Content Include="Views\Home\ContactUs.cshtml" />
+    <Content Include="Views\Home\Corporate_Overview.cshtml" />
+    <Content Include="Views\Home\EngagementModel.cshtml" />
+    <Content Include="Views\Home\ITConsulting.cshtml" />
+    <Content Include="Views\Home\MicrosoftTech.cshtml" />
+    <Content Include="Views\Home\MobileTech.cshtml" />
+    <Content Include="Views\Home\Openings.cshtml" />
+    <Content Include="Views\Home\SoftwareDevelopment.cshtml" />
+    <Content Include="Views\Home\Trainings.cshtml" />
+    <Content Include="Views\Home\VisionMission.cshtml" />
+    <Content Include="Views\Home\Why_Shree365.cshtml" />
+    <Content Include="Views\Home\InfrastructureMgmt.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <None Include="Service References\RoleService\ShreeClients.wsdl" />
+    <None Include="Service References\RoleService\ShreeClients.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RoleService\ShreeClients1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RoleService\ShreeClients2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\AddPhoneNumber.aspx.cs">
+      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\AddPhoneNumber.aspx.designer.cs">
+      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Confirm.aspx.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Confirm.aspx.designer.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Forgot.aspx.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Forgot.aspx.designer.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Lockout.aspx.cs">
+      <DependentUpon>Lockout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Lockout.aspx.designer.cs">
+      <DependentUpon>Lockout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManageLogins.aspx.cs">
+      <DependentUpon>ManageLogins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManageLogins.aspx.designer.cs">
+      <DependentUpon>ManageLogins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManagePassword.aspx.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManagePassword.aspx.designer.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.cs">
+      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.designer.cs">
+      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.cs">
+      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.designer.cs">
+      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\VerifyPhoneNumber.aspx.cs">
+      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
+      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="BannerBar.ascx.cs">
+      <DependentUpon>BannerBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BannerBar.ascx.designer.cs">
+      <DependentUpon>BannerBar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="BottomBar.ascx.cs">
+      <DependentUpon>BottomBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BottomBar.ascx.designer.cs">
+      <DependentUpon>BottomBar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client.aspx.cs">
+      <DependentUpon>Client.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client.aspx.designer.cs">
+      <DependentUpon>Client.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CloudComputing.aspx.cs">
+      <DependentUpon>CloudComputing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CloudComputing.aspx.designer.cs">
+      <DependentUpon>CloudComputing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultants.aspx.cs">
+      <DependentUpon>Consultants.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultants.aspx.designer.cs">
+      <DependentUpon>Consultants.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Corporate_Overview.aspx.cs">
+      <DependentUpon>Corporate_Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Corporate_Overview.aspx.designer.cs">
+      <DependentUpon>Corporate_Overview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EngagementModels.aspx.cs">
+      <DependentUpon>EngagementModels.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EngagementModels.aspx.designer.cs">
+      <DependentUpon>EngagementModels.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FileUploads.aspx.cs">
+      <DependentUpon>FileUploads.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FileUploads.aspx.designer.cs">
+      <DependentUpon>FileUploads.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="IShreeClients.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IUserRoleService.cs" />
+    <Compile Include="LeftSide_BA.ascx.cs">
+      <DependentUpon>LeftSide_BA.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LeftSide_BA.ascx.designer.cs">
+      <DependentUpon>LeftSide_BA.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LeftSide_DBA.ascx.cs">
+      <DependentUpon>LeftSide_DBA.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LeftSide_DBA.ascx.designer.cs">
+      <DependentUpon>LeftSide_DBA.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LeftSide_Development.ascx.cs">
+      <DependentUpon>LeftSide_Development.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LeftSide_Development.ascx.designer.cs">
+      <DependentUpon>LeftSide_Development.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LeftSide_QA.ascx.cs">
+      <DependentUpon>LeftSide_QA.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LeftSide_QA.ascx.designer.cs">
+      <DependentUpon>LeftSide_QA.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LeftSide_Production.ascx.cs">
+      <DependentUpon>LeftSide_Production.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LeftSide_Production.ascx.designer.cs">
+      <DependentUpon>LeftSide_Production.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\RoleService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ShreeClients.svc.cs">
+      <DependentUpon>ShreeClients.svc</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ShreeLibrary.cs" />
+    <Compile Include="InfrastructureMgmt.aspx.cs">
+      <DependentUpon>InfrastructureMgmt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InfrastructureMgmt.aspx.designer.cs">
+      <DependentUpon>InfrastructureMgmt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ITConsulting.aspx.cs">
+      <DependentUpon>ITConsulting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ITConsulting.aspx.designer.cs">
+      <DependentUpon>ITConsulting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LeftBar.ascx.cs">
+      <DependentUpon>LeftBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LeftBar.ascx.designer.cs">
+      <DependentUpon>LeftBar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Login_Shree.aspx.cs">
+      <DependentUpon>Login_Shree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login_Shree.aspx.designer.cs">
+      <DependentUpon>Login_Shree.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MicrosoftTech.aspx.cs">
+      <DependentUpon>MicrosoftTech.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MicrosoftTech.aspx.designer.cs">
+      <DependentUpon>MicrosoftTech.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MobileTech.aspx.cs">
+      <DependentUpon>MobileTech.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MobileTech.aspx.designer.cs">
+      <DependentUpon>MobileTech.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Openings.aspx.cs">
+      <DependentUpon>Openings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Openings.aspx.designer.cs">
+      <DependentUpon>Openings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectRegistration.aspx.cs">
+      <DependentUpon>ProjectRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectRegistration.aspx.designer.cs">
+      <DependentUpon>ProjectRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RightBar.ascx.cs">
+      <DependentUpon>RightBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RightBar.ascx.designer.cs">
+      <DependentUpon>RightBar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shree.Master.cs">
+      <DependentUpon>Shree.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shree.Master.designer.cs">
+      <DependentUpon>Shree.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Shree.Mobile.Master.cs">
+      <DependentUpon>Shree.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shree.Mobile.Master.designer.cs">
+      <DependentUpon>Shree.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="LeftSide_Mgmt.ascx.cs">
+      <DependentUpon>LeftSide_Mgmt.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LeftSide_Mgmt.ascx.designer.cs">
+      <DependentUpon>LeftSide_Mgmt.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ShreeMenu.ascx.cs">
+      <DependentUpon>ShreeMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShreeMenu.ascx.designer.cs">
+      <DependentUpon>ShreeMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shree_BA.aspx.cs">
+      <DependentUpon>Shree_BA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shree_BA.aspx.designer.cs">
+      <DependentUpon>Shree_BA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shree_DBA.aspx.cs">
+      <DependentUpon>Shree_DBA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shree_DBA.aspx.designer.cs">
+      <DependentUpon>Shree_DBA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shree_Production.aspx.cs">
+      <DependentUpon>Shree_Production.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shree_Production.aspx.designer.cs">
+      <DependentUpon>Shree_Production.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shree_QA.aspx.cs">
+      <DependentUpon>Shree_QA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shree_QA.aspx.designer.cs">
+      <DependentUpon>Shree_QA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shree_Status.ascx.cs">
+      <DependentUpon>Shree_Status.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shree_Status.ascx.designer.cs">
+      <DependentUpon>Shree_Status.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shree_Developer.aspx.cs">
+      <DependentUpon>Shree_Developer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shree_Developer.aspx.designer.cs">
+      <DependentUpon>Shree_Developer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shree_Mgmt.aspx.cs">
+      <DependentUpon>Shree_Mgmt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shree_Mgmt.aspx.designer.cs">
+      <DependentUpon>Shree_Mgmt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SoftwareDevelopment.aspx.cs">
+      <DependentUpon>SoftwareDevelopment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SoftwareDevelopment.aspx.designer.cs">
+      <DependentUpon>SoftwareDevelopment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="StatusBar.ascx.cs">
+      <DependentUpon>StatusBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StatusBar.ascx.designer.cs">
+      <DependentUpon>StatusBar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="TopBar.ascx.cs">
+      <DependentUpon>TopBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TopBar.ascx.designer.cs">
+      <DependentUpon>TopBar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Trainings.aspx.cs">
+      <DependentUpon>Trainings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Trainings.aspx.designer.cs">
+      <DependentUpon>Trainings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRegistration.aspx.cs">
+      <DependentUpon>UserRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRegistration.aspx.designer.cs">
+      <DependentUpon>UserRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRoleClient.aspx.cs">
+      <DependentUpon>UserRoleClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoleClient.aspx.designer.cs">
+      <DependentUpon>UserRoleClient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRoleRegistration.aspx.cs">
+      <DependentUpon>UserRoleRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoleRegistration.aspx.designer.cs">
+      <DependentUpon>UserRoleRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRoleService_WPF.aspx.cs">
+      <DependentUpon>UserRoleService_WPF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoleService_WPF.aspx.designer.cs">
+      <DependentUpon>UserRoleService_WPF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User_Project_Assignment.aspx.cs">
+      <DependentUpon>User_Project_Assignment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User_Project_Assignment.aspx.designer.cs">
+      <DependentUpon>User_Project_Assignment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="VisionMission.aspx.cs">
+      <DependentUpon>VisionMission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VisionMission.aspx.designer.cs">
+      <DependentUpon>VisionMission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Why_Shree365.aspx.cs">
+      <DependentUpon>Why_Shree365.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Why_Shree365.aspx.designer.cs">
+      <DependentUpon>Why_Shree365.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="ConvertedLocation\" />
+    <Folder Include="css\" />
+    <Folder Include="ImageData\" />
+    <Folder Include="js\" />
+    <Folder Include="ProfileData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\RoleService\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Images\Ohm1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>16507</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:16507/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

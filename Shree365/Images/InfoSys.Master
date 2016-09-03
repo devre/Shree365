@@ -1,0 +1,79 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Shree.Master.cs" Inherits="Shree365.Shree" %>
+
+<%@ Register TagPrefix="ShreeMain" TagName="ShreeTop" Src="/TopBar.ascx"%>
+<%@ Register TagPrefix="ShreeMain" TagName="ShreeMenu" Src="/ShreeMenu.ascx"%>
+<%@ Register TagPrefix="ShreeMain" TagName="ShreeBanner" Src="/BannerBar.ascx"%>
+<%@ Register TagPrefix="ShreeMain" TagName="ShreeRight" Src="/RightBar.ascx"%>
+<%@ Register TagPrefix="ShreeMain" TagName="ShreeBottom" Src="/BottomBar.ascx"%>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script src="Scripts/jquery-1.7.1.min.js"></script>
+       <script type="text/javascript">
+           $(document).ready(function () {
+               //alert("Greetings and Salutations!");
+           });
+    </script>  
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+         <link rel="SHORTCUT ICON" href="Images/Ohm1.ico"/>
+        <link href="Styles/StyleSheetInfo.css" rel="Stylesheet" type="text/css" />
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="ShreeMenu" style="width:100%">
+        <asp:ContentPlaceHolder ID="MenuBar"  runat="server">        
+        </asp:ContentPlaceHolder>
+    </div>
+    
+    <table style="width:100%">
+        <tr>
+            <td>
+                <div id="ShreeTop" style="width:100%">    
+                    <asp:ContentPlaceHolder id="TopBar" runat="server">
+                    </asp:ContentPlaceHolder>                  
+                </div>
+            </td>    
+        </tr>
+    </table>
+    <div id="ShreeBanner" style="width:100%">
+        <asp:ContentPlaceHolder ID="BannerBar"  runat="server">        
+        </asp:ContentPlaceHolder>
+    </div>
+    <!-- Middle Section Details -->    
+    <table>
+    <tr>    
+        <td style="border:solid; vertical-align:top; width:75%">
+            <div id="InfoMiddle" style="vertical-align:top">
+                <asp:ContentPlaceHolder id="MiddleSection" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </td>
+        <td style="border:solid; width:25%">
+            <div id="ShreeRight">    
+                <asp:ContentPlaceHolder id="RightBar" runat="server">                 
+                </asp:ContentPlaceHolder>               
+            </div>
+         </td>
+    </tr>
+    </table>
+
+    <!-- Bottom Bar Header -->
+    <table style="width:100%">
+        <tr>
+            <td>
+                <div id="ShreeBottom" style="width:100%">    
+                    <asp:ContentPlaceHolder id="BottomHeader" runat="server">                                               
+                    </asp:ContentPlaceHolder>    
+                </div>
+            </td>    
+        </tr>
+    </table>       
+
+    </form>
+</body>
+</html>

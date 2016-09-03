@@ -1,0 +1,126 @@
+﻿@using System.Web.Optimization;
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+
+    <title>Shree365</title>
+
+    @Styles.Render("/css")
+    @Scripts.Render("/js")
+    @Scripts.Render("/bundles/modernizr")
+    @Styles.Render("/Content/foundation/css")
+    @Scripts.Render("/bundles/modernizr")
+    @Scripts.Render("/bundles/jquery")
+    @Scripts.Render("/bundles/foundation")
+    @Scripts.Render("/bundles/bootstrap")
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="/js/bootstrap.min.js"></script>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
+</head>
+<body>
+    <form>
+        <div class="container">
+            <div class="row">
+                <div id="ShreeMenu" style="padding:0">
+                    <table style="width:100%">
+                        <tr>
+                            <td style="width:100%; border:solid; padding:0">
+                                <div class="twelve columns">
+                                    @*<section id="ShreeMenu">*@
+                                    @Html.Partial("PartialMenuBar")
+                                    @*</section>*@
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="ShreeTop" style="padding:0">
+                    <table style="width:100%">
+                        <tr>
+                            <td style="width:100%; border:solid; padding:0">
+                                <div class="twelve columns">
+                                    @*<section id="ShreeTop">*@
+                                    @Html.Partial("PartialTopBar")
+                                    @*</section>*@
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="ShreeBanner" style="padding:0">
+                    <table style="width:100%">
+                        <tr>
+                            <td style="width:100%; border:solid">
+                                <div class="twelve columns">
+                                    @Html.Partial("PartialBannerBar")
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="ShreeStatus" style="padding:0">
+                    <table style="width:100%">
+                        <tr>
+                            <td style="width:100%; padding:0; border:solid">
+                                <div class="twelve columns">
+                                    @Html.Partial("PartialStatusBar")
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- Middle Section Details -->
+                <div class="container">
+                    <div class="row">
+                        <table style="width:100%; border:solid">
+                            <tr>
+                                <td style="padding:0; vertical-align:top" width:15%; border:solid">
+                                    <div id="ShreeLeft" class="four columns">
+                                        @Html.Partial("PartialLeftBar")
+                                    </div>
+                                </td>
+                                <td style="vertical-align:top;  padding:0; width:70%; border:solid">
+                                    <div id="InfoMiddle" class="four columns">
+                                        @RenderBody()
+                                    </div>
+                                </td>
+
+                                <td style="padding:0; vertical-align:top" width:15%; border:solid">
+                                    <div id="ShreeRight" class="four columns">
+                                        @Html.Partial("PartialRightBar")
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- Bottom Bar Header -->
+                <div id="ShreeBottom">
+                    <table style="width:100%">
+                        <tr>
+                            <td style="width:100%; padding:0; border:solid">
+                                <div class="twelve columns">
+                                    @*<section id="ShreeBottom">*@
+                                    @Html.Partial("PartialBottomBar")
+                                    @*</section>*@
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+@Styles.Render("/css")
+@Scripts.Render("/js")
+@Scripts.Render("/bundles/modernizr")
+@Styles.Render("/Content/foundation/css")
+@Scripts.Render("/bundles/modernizr")
+@Scripts.Render("/bundles/jquery")
+@Scripts.Render("/bundles/foundation")
+@Scripts.Render("/bundles/bootstrap")
+@Styles.Render("~/Content/bootstrapcss")
+@Styles.Render("/Content/css")
+
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<script src="/js/bootstrap.min.js"></script>
+<link href="/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+
+<script>
+    $(document).foundation();
+</script>
+<ul style="text-align:center; font-size:medium">
+    <li style="text-align:left; font-size:medium; border:none">
+        <a href="#" style="font-family:Arial; font-size:larger; color:firebrick">Accounts</a>
+        <a href="/Home">User Registration</a>
+        <a href="/Home">Project Assignment</a>
+        <a href="/Home">Project Registration</a>
+        <a href="#" style="font-family:Arial; font-size:larger; color:firebrick">Reports</a>
+        <a href="/Home">User List</a>
+        <a href="/Home">User Details</a>
+        <a href="/Home">Project List</a>
+        <a href="/Home">Project Assignment</a>
+    </li>
+</ul>
